@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("rsvpForm");
   const popup = document.getElementById("successPopup");
 
@@ -292,4 +292,4 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Something went wrong");
     });
   });
-});
+});*/

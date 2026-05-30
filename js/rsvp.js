@@ -1,16 +1,17 @@
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbwpI0BI06nF4KtWT_gXX3RrNVfZSMATwtE8wK7rXHZmc2I4kAalzvK4l1C3xRlTzY8Xjw/exec";
+"https://script.google.com/macros/s/AKfycbxYAk8_Q2tTmSy6OoUysTJm0wqAiRW-K7yPmwBHaKtAbmLacnQoWSrHAK9zzGqHQ-IBKg/exec";
 
-document
-.getElementById("rsvpForm")
+document.getElementById("rsvpForm")
 .addEventListener("submit", async function (e) {
 
     e.preventDefault();
 
-    const attendance =
-        document.querySelector(
-            'input[name="attendance"]:checked'
-        ).value;
+    const popup = document.getElementById("successPopup");
+    const popupMessage = document.getElementById("popupMessage");
+
+    const attendance = document.querySelector(
+        'input[name="attendance"]:checked'
+    ).value;
 
     const formData = {
         name: document.getElementById("name").value,
@@ -21,32 +22,38 @@ document
 
     try {
 
-        const response = await fetch(
-            SCRIPT_URL,
-            {
-                method: "POST",
-                body: JSON.stringify(formData)
-            }
-        );
+        await fetch(SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
 
-        const result = await response.json();
+        popupMessage.textContent =
+            "Thank you for your response 💖";
 
-        if (result.success) {
+        popup.classList.add("show");
 
-            document
-                .getElementById("rsvp-success")
-                .innerHTML =
-                "Thank you! Your RSVP has been submitted.";
+        setTimeout(() => {
+            popup.classList.remove("show");
+        }, 2300);
 
-            this.reset();
-        }
+        this.reset();
 
     } catch (error) {
 
-        alert(
-            "Something went wrong. Please try again."
-        );
+        console.error(error);
 
+        popupMessage.textContent =
+            "Something went wrong. Please try again 😔";
+
+        popup.classList.add("show");
+
+        setTimeout(() => {
+            popup.classList.remove("show");
+        }, 2300);
     }
 
 });
