@@ -144,9 +144,7 @@
                             <button class="rsvp-submit">Confirm</button>
 
                         </form> -->
-                        <form id="rsvpForm" class="rsvp-form" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-
-                            <!-- Required for Netlify -->
+                        <!-- <form id="rsvpForm" class="rsvp-form" name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                             <input type="hidden" name="form-name" value="rsvp">
                             <input type="hidden" name="bot-field">
 
@@ -178,7 +176,58 @@
 
                             <button type="submit" class="rsvp-submit">Confirm</button>
 
+                        </form> -->
+                        <form id="rsvpForm" class="rsvp-form">
+                            <div class="rsvp-field">
+                                <input id="name" type="text" name="name"
+                                    placeholder="Full Name *" required>
+                            </div>
+
+                            <div class="rsvp-field">
+                                <input id="email" type="email" name="email"
+                                    placeholder="Email (optional)">
+                            </div>
+
+                            <div class="rsvp-field">
+                                <label class="attend-label">Will you attend?</label>
+
+                                <div class="rsvp-buttons">
+
+                                    <label>
+                                        <input type="radio"
+                                            name="attendance"
+                                            value="Yes"
+                                            required
+                                            hidden
+                                            checked>
+                                        <span class="btn-style">Yes</span>
+                                    </label>
+
+                                    <label>
+                                        <input type="radio"
+                                            name="attendance"
+                                            value="No"
+                                            hidden>
+                                        <span class="btn-style">No</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <div class="rsvp-field">
+                                <textarea id="message"
+                                    name="message"
+                                    rows="3"
+                                    placeholder="Your message..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="rsvp-submit">
+                                Confirm
+                            </button>
+
                         </form>
+                        <div id="rsvp-success"></div>
                     </div>
                 </div>
             </section>
@@ -191,6 +240,7 @@
             </div>
         </div>
         <script src="js/jquery.js"></script>
+        <script src="js/rsvp.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>    
     </body>
 </html>
