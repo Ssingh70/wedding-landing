@@ -1,0 +1,27 @@
+/* Brand Control System */
+
+:root {
+  /* Primary Brand Colors */
+  --primary: #3a4534;          /* Sage Dark */
+  --background: #f1ebdf; 
+  /*--background: #f3ede3;*/       /* Ivory */
+  --dark-bg: #1f1f1f;          /* Carbon */
+  --text: #3a4534;             /* Foreground */
+
+  /* Accent Colors */
+  --accent: #8a9a7b;           /* Sage */
+  --gold: #e0b84c;             /* Gold */
+  --cream: #e9e2d6;            /* Soft Cream */
+
+  /* Typography */
+  --heading-font: "Cormorant Garamond", serif;
+  --script-font: "Great Vibes", cursive;
+  --body-font: "Lora", serif;
+
+  /* Layout */
+  --section-padding: 100px 0;
+  --radius: 8px;
+
+  /* Shadow */
+  --shadow-soft: 0 2px 15px rgba(58, 69, 52, 0.08);
+}

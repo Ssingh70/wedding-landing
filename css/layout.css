@@ -1,0 +1,784 @@
+/* Structure System */
+@font-face {
+  font-family: 'YoungBoy';
+  src: url('assets/fonts/YoungBoy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#bg-color{
+    background-color: #f4f1ec;
+}
+.container {
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.dark {
+  background: var(--dark-bg);
+}
+
+.grid-2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.text-center {
+  text-align:center;
+}
+
+/* ======================
+   💕 HEART LOADER
+====================== */
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  background: #faf8f0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#pageLoader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-inner {
+  text-align: center;
+}
+
+/* ======================
+   💕 HEART LOADER FINAL
+====================== */
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  background: #faf8f0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden; /* ✅ prevents overflow */
+
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#pageLoader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-inner {
+  text-align: center;
+}
+
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  background: #faf8f0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ✅ FLEX COLUMN (main fix) */
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* design area */
+.design {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+/* 💍 RINGS */
+.ring {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #d4af37;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+.ring.left {
+  left: 15px;
+  z-index: 2;
+}
+
+.ring.right {
+  right: 15px;
+  z-index: 1;
+}
+
+/* 💕 FIXED HEART */
+.heart {
+  position: absolute;
+  top: 10px; /* slight adjust */
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: #e91e63;
+
+  transform: translateX(-50%) rotate(45deg);
+  transform-origin: center;
+
+  animation: heartBeat 1.4s ease-in-out infinite;
+}
+
+/* circles */
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #e91e63;
+  border-radius: 50%;
+}
+
+/* TOP circle */
+.heart::before {
+  top: -9px;
+  left: 0;
+}
+
+/* LEFT circle */
+.heart::after {
+  left: -9px;
+  top: 0;
+}
+
+/* 💫 TEXT */
+.tagline {
+  font-family: 'YoungBoy', 'Georgia', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #5c2018;
+
+  animation: fadeText 2s ease-in-out infinite;
+}
+
+/* animations */
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: translateX(-50%) rotate(45deg) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) rotate(45deg) scale(1.15);
+  }
+}
+
+@keyframes fadeText {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* 🔒 LOCK SCROLL */
+body.loading {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/* FULL RESPONSIVE VIDEO BANNER START */
+
+    .video-banner {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh; /* better mobile support */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .banner-video {
+      width: 100%;
+      height: 100%;
+      object-fit: inherit; 
+    }
+
+    /* iOS Safari Fix */
+    @supports (-webkit-touch-callout: none) {
+      .video-banner {
+        height: -webkit-fill-available;
+      }
+    }
+
+/* FULL RESPONSIVE VIDEO BANNER END */
+
+/* GETTING MARRIED START */
+
+  .intro-section {
+    background: #f4f1ec;
+    text-align: center;
+    padding: 30px 15px;
+  }
+
+  .intro-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  /* First line */
+  .title-line-1 {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 36px;
+  }
+
+  /* Second line */
+  .title-line-2 {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .scratch-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  /* IMAGE */
+  .scratch-box img {
+    width: 100%;
+    display: block;
+    border-radius: 50% / 50%; /* 👈 OVAL SHAPE */
+  }
+
+  /* OVERLAY */
+  .scratch-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 50% / 50%; /* 👈 SAME OVAL */
+    overflow: hidden;
+  }
+
+  /* CANVAS */
+  #scratchCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .intro-image img{
+    width:100%;
+    height:230px;
+  }
+
+  .intro-text{
+    margin-top:20px;
+    font-size:15px;
+    line-height:1.6;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+/* GETTING MARRIED END */
+
+/* FULL RESPONSIVE VIDEO SAVE THE DATE START */
+  .save-date-section{
+    padding-top:40px;
+    padding-bottom:100px;
+    background-color: #f4f1ec;
+  }
+
+  .save-date-video{
+    width:100%;
+    overflow:hidden;
+  }
+
+  .save-date-video video{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+  }
+
+/* FULL RESPONSIVE VIDEO SAVE THE DATE END */
+
+/* LOVE QUOTE START */
+
+  .love-quote-section{
+    padding-bottom:100px;
+    background-color: #f4f1ec;
+  }
+
+  .quote-image{
+    position:relative;
+    margin-top:100px;
+  }
+
+  .quote-image img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  .quote-text{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    color:#fff;
+    font-size:20px;
+    font-family:'Reenie Beanie', cursive;
+    max-width:70%;
+  }
+
+/* LOVE QUOTE END */
+
+/* MAP START */
+
+  .map-section{
+    background:#f4f1ec;
+    padding:50px 15px;
+    text-align:center;
+  }
+
+  .map-title{
+    font-family:'Reenie Beanie', cursive;
+    font-size:34px;
+    margin-bottom:20px;
+    color: #5c2018;
+  }
+
+  .map-wrapper{
+    width:100%;
+    border-radius:16px;
+    overflow:hidden;
+    border:2px solid #000;
+  }
+
+  .map-wrapper iframe{
+    width:100%;
+    height:300px;
+    border:0;
+    display:block;
+  }
+
+/* MAP END */
+
+/* RSVP SECTION START */
+  
+  .rsvp-section{
+    background:#f4f1ec;
+    padding:60px 15px;
+  }
+
+  .rsvp-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+  }
+
+  .rsvp-content{
+    text-align:center;
+  }
+
+  .rsvp-title{
+    font-family:'Reenie Beanie', cursive;
+    font-size:36px;
+    margin-bottom:10px;
+  }
+
+  .rsvp-sub{
+    font-size:14px;
+    color:#777;
+    margin-bottom:25px;
+  }
+
+  .rsvp-form{
+    max-width:350px;
+    margin:auto;
+  }
+
+  .rsvp-field{
+    margin-bottom:15px;
+  }
+
+  .rsvp-field input,
+  .rsvp-field textarea{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-bottom:1px solid #000;
+    background:transparent;
+    font-family:'Playfair Display', serif;
+    outline:none;
+  }
+
+  .attend-label{
+    display:block;
+    margin-bottom:10px;
+    font-size:14px;
+  }
+
+  /* Flex container for buttons */
+  .rsvp-buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* hide the actual radio input */
+  .rsvp-buttons input[type="radio"] {
+    display: none;
+  }
+
+  /* style the spans to look like buttons */
+  .rsvp-buttons .btn-style {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #000;
+    background: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+    border-radius: 5px; /* optional for smoother look */
+  }
+
+  /* hover effect */
+  .rsvp-buttons .btn-style:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  /* checked state: highlight selected button */
+  .rsvp-buttons input[type="radio"]:checked + .btn-style {
+    background: #000;
+    color: #fff;
+  }
+
+  .rsvp-submit{
+    width:100%;
+    padding:12px;
+    background:#000;
+    color:#fff;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+  }
+
+/* RSVP SECTION END */
+
+/* STORY SECTION START */
+
+  .wedding-text-section{
+      background:#f8f5f0;
+      padding:0px 20px;
+      text-align:center;
+    } 
+
+  /* Main box */
+  .wedding-text-box{
+    max-width:650px;
+    margin:auto;
+    padding:40px 20px;
+    position:relative;
+  }
+
+  /* Decorative lines */
+  .wedding-text-box::before,
+  .wedding-text-box::after{
+    content:"";
+    display:block;
+    width:120px;
+    height:1px;
+    background:#c9a27e;
+    margin:20px auto;
+  }
+
+  /* Text */
+  .wedding-text-box p{
+    font-family:'YoungBoy', serif;
+    font-size:28px;
+    line-height:1.8;
+    color:#5c2018;
+    letter-spacing:1px;
+    max-width:420px;   /* controls line break */
+    margin:auto;
+    white-space: pre-line;
+  }
+
+  /* Ornament */
+  .ornament{
+    font-size:22px;
+    color:#c9a27e;
+    display:block;
+    margin:10px 0;
+  }
+
+  /* Responsive */
+  @media(max-width:576px){
+    .wedding-text-box p{
+      font-size:18px;
+    }
+  }
+
+/* STORY SECTION END */
+
+
+/* 📱 SMALL DEVICES (≥480px) */
+@media(min-width:480px){
+  .story-text-section{
+    padding:50px 20px;
+  }
+
+  .story-text-container{
+    max-width:85%;
+  }
+
+  .story-text-container p{
+    font-size:17px;
+  }
+}
+
+@media(max-width:900px){
+  .grid-2 {
+    grid-template-columns:1fr;
+  }
+}
+
+/* TABLET */
+  @media (min-width:768px){
+
+    .intro-title{
+      font-size:42px;
+    }
+
+    .intro-image{
+      max-width:700px;
+      margin:auto;
+    }
+
+    .intro-image img{
+      height:450px;
+    }
+
+    .save-date-section{
+      padding-top:60px;
+      padding-bottom:60px;
+      background-color: #f4f1ec;
+    }
+
+    .save-date-video{
+      max-width:700px;
+      margin:auto;
+    }
+
+    .love-quote-section{
+      padding-top:70px;
+      padding-bottom:70px;
+      background-color: #f4f1ec;
+    }
+
+    .quote-text{
+      font-size:24px;
+    }
+
+    .quote-image{
+      max-width:700px;
+      margin:30px auto 0;
+    }
+
+    .map-section{
+      padding:70px 30px;
+    }
+
+    .map-title{
+      font-size:42px;
+    }
+
+    .map-wrapper{
+      max-width:700px;
+      margin:auto;
+    }
+
+    .map-wrapper iframe{
+      height:400px;
+    }
+
+    .rsvp-wrapper{
+      flex-direction:column;
+      align-items:center;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .rsvp-content{
+      width:50%;
+      text-align:left;
+    }
+
+    .rsvp-title, .rsvp-sub {
+      text-align: center;
+      width: 100%;
+    }
+    .rsvp-form{
+      margin:0;
+    }
+    
+    .story-text-section{
+      padding:70px 30px;
+    }
+
+    .story-text-container{
+      max-width:700px;
+    }
+
+    .story-text-container p{
+      font-size:18px;
+      line-height:1.8;
+    }
+  }
+
+/* DESKTOP */
+  @media (min-width:1024px){
+
+    .intro-title{
+      font-size:48px;
+    }
+
+    .intro-image{
+      max-width:900px;
+    }
+
+    .intro-image img{
+      height:500px;
+    }
+
+    .save-date-video{
+      max-width:900px;
+    }
+
+    .quote-image{
+      max-width:900px;
+    }
+
+    .quote-text{
+      font-size:28px;
+    }
+
+    .map-title{
+      font-size:48px;
+    }
+
+    .map-wrapper{
+      max-width:900px;
+    }
+
+    .map-wrapper iframe{
+      height:450px;
+    }
+
+    .rsvp-title{
+      font-size:44px;
+    }
+
+    .rsvp-wrapper{
+      max-width:1100px;
+    }
+    .story-text-section{
+      padding:90px 20px;
+    }
+
+    .story-text-container{
+      max-width:800px;
+    }
+
+    .story-text-container p{
+      font-size:19px;
+      line-height:1.9;
+    }
+  }
+
+/* hidden state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* visible state */
+.animate-on-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 99999;
+}
+
+.popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-box {
+  background: #faf8f0;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+
+  font-family: 'YoungBoy', serif;
+  color: #5c2018;
+}
